@@ -41,7 +41,6 @@ html {
 }
 .icon--up--main {
     transition: 0.5s ease-in;
-    scroll-behavior: smooth !important;
 }
 
 .online--menu__button:hover {
@@ -49,7 +48,6 @@ html {
 }
 
 .main--article {
-    background: rgb(168, 163, 163);
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
@@ -79,4 +77,8 @@ html {
     gap: 10px;
     font-weight: 700;
     cursor: pointer;
+}
+
+.main--article__footer:hover {
+    color: #F4CE14;
 }

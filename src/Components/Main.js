@@ -4,13 +4,15 @@ import salad from "../Assets/greek salad.jpg"
 import lemon from "../Assets/lemon dessert.jpg"
 import {RiRidingFill} from "react-icons/ri"
 import {BiArrowFromBottom} from "react-icons/bi"
+import { Testimonials } from './Testimonials'
+import { About } from './About'
 
 export const Main = () => {
 
-
- const gotoTop = () => {
+  const gotoTop = () => {
     window.scroll(0, document.body.scrollTop)
- }
+  }
+  
   return (
     <main>
       <section className='first--section'>
@@ -19,7 +21,7 @@ export const Main = () => {
       </section>
       <section className='main--section'>
         <article className='main--article'>
-          <img style={{height: "250px", width: "320px", borderRadius: "10px"}} src={salad} alt="Salad-Dish" />
+          <img style={{height: "250px", width: "320px", borderRadius: "10px 10px 0px 0px"}} src={salad} alt="Salad-Dish" />
           <div className='description'>
             <h3>Greek Salad</h3>
             <p style={{color: "#F4CE14"}}>$12.99</p>
@@ -31,7 +33,7 @@ export const Main = () => {
           </div>
         </article>
         <article className='main--article'>
-          <img style={{height: "250px", width: "320px", borderRadius: "10px"}} src={brucheta} alt="Salad-Dish" />
+          <img style={{height: "250px", width: "320px", borderRadius: "10px 10px 0px 0px"}} src={brucheta} alt="Salad-Dish" />
           <div className='description'>
             <h3>Bruchetta</h3>
             <p style={{color: "#F4CE14"}}>$5.99</p>
@@ -43,7 +45,7 @@ export const Main = () => {
           </div>
         </article>
         <article className='main--article'>
-          <img style={{height: "250px", width: "320px", borderRadius: "10px"}} src={lemon} alt="Salad-Dish" />
+          <img style={{height: "250px", width: "320px", borderRadius: "10px 10px 0px 0px"}} src={lemon} alt="Salad-Dish" />
           <div className='description'>
             <h3>Lemon Dessert</h3>
             <p style={{color: "#F4CE14"}}>$5.00</p>
@@ -58,6 +60,8 @@ export const Main = () => {
       <div className='up--icon'>
         <BiArrowFromBottom className='icon--up--main' onClick={gotoTop}/>
       </div>
+      <Testimonials />
+      <About />
     </main>
   )
 }

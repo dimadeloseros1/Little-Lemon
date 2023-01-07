@@ -1,0 +1,72 @@
+.dropdown--icon {
+    top: 20px;
+    right: 20px;
+    height: 60px;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: 0.5s ease-in-out;
+}
+
+.menu--trigger {
+    height: 20%;
+}
+
+.dropdown--menu {
+    height: 10px;
+}
+
+.stars {
+    border-top: 2px solid rgb(173, 167, 167);
+}
+
+.dropdown--menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.5s ease-in-out;
+    height: 80px;
+}
+
+.dropdown--menu.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.5s ease-in-out;
+}
+
+.testimonials--section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(233, 233, 199);
+}
+
+.testimonials--article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 18rem;
+    margin: 25px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.testimonials--article img {
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+.dropdown--icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonials--header {
+    display: flex;
+    justify-content: center;
+}
+
