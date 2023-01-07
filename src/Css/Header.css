@@ -1,0 +1,45 @@
+.header {
+    background: #495E57;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo--name {
+    color: #F4CE14;
+    font-size: 2rem;
+}
+
+.article {
+    color: white;
+    width: 10rem;
+}
+
+.reserve--button {
+    padding: 0.8rem;
+    width: 10rem;
+    border-radius: 1rem;
+    font-size: medium;
+    background-color: #F4CE14;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.reserve--button:hover {
+    background-color: rgb(216, 176, 128);
+}
+
+.food--pic {
+    height: 280px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+
+@media(max-width: 450px){
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

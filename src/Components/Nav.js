@@ -1,10 +1,10 @@
 import React from 'react'
-import test from "../Assets/Logo.png"
+import logo from "../Assets/Logo.png"
 export const Nav = () => {
   return (
-    <nav>
+    <nav className='nav'>
         <div className='logo'>
-            <img src={test} alt="Little Lemon logo" />
+            <img src={logo} alt="Little Lemon logo" />
         </div>
          <ul className='navigation'>
             <li>
@@ -17,7 +17,7 @@ export const Nav = () => {
                 <a href="/#">Reservations</a>
             </li>
             <li>
-                <a href="/#">Order Online</a>
+                <a href="/#">Order-Online</a>
             </li>
             <li>
                 <a href="/#">Login</a>
