@@ -9,7 +9,6 @@ import { Highlights } from './Highlights'
 
 export const Main = (props) => {
 
-  
   return (
     <div>
       <Highlights />

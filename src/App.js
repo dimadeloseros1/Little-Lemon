@@ -12,17 +12,18 @@ import { Nav } from './Components/Nav';
 import { Route, Routes } from 'react-router-dom';
 import { About } from './Components/About';
 import { Layout } from './Components/Layout';
-
+import { Menu } from './Components/Menu';
 
 function App() {
   return (
     <>
-    <Layout>
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path="/About" element={<About />} />
-      </Routes>
-    </Layout>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Menu" element={<Menu />} />
+        </Routes>
+      </Layout>
     </>
   );
 }

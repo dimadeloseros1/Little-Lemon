@@ -6,11 +6,14 @@ export const Nav = (props) => {
   return (
     <nav className='nav'>
         <div className='logo'>
-            <img src={logo} alt="Little Lemon logo" />
+          <Link to="/">
+            <img style={{cursor: "pointer"}} src={logo} alt="Little Lemon logo" />
+          </Link>
         </div>
          <ul className='navigation'>
-         <Link to="/">Home</Link>
-         <Link to="/About">About</Link>
+          <Link to="/">Home</Link>
+          <Link to="/About">About</Link>
+          <Link to="/Menu">Menu</Link>
          </ul>
     </nav>
   )

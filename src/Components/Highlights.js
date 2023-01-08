@@ -4,17 +4,20 @@ import salad from "../Assets/greek salad.jpg"
 import lemon from "../Assets/lemon dessert.jpg"
 import {RiRidingFill} from "react-icons/ri"
 import {BiArrowFromBottom} from "react-icons/bi"
+import { Link } from 'react-router-dom'
 
-export const Highlights = (props) => {
+export const Highlights = () => {
 
   const gotoTop = () => {
     window.scroll(0, document.body.scrollTop)
   }
   return (
-    <div>
+    <main>
       <section className='first--section'>
         <h1 className='first--section__header'>This weeks specials!</h1>
-        <button className='online--menu__button'>Online Menu</button>
+        <Link to="/Menu">
+            <button className='online--menu__button'>Online Menu</button>
+        </Link>
       </section>
       <section className='main--section'>
         <article className='main--article'>
@@ -57,6 +60,6 @@ export const Highlights = (props) => {
       <div className='up--icon'>
         <BiArrowFromBottom className='icon--up--main' onClick={gotoTop}/>
       </div>
-    </div>
+    </main>
   )
 }
