@@ -9,17 +9,20 @@ import { Footer } from './Components/Footer';
 import { Header } from './Components/Header';
 import { Main } from './Components/Main';
 import { Nav } from './Components/Nav';
+import { Route, Routes } from 'react-router-dom';
+import { About } from './Components/About';
+import { Layout } from './Components/Layout';
 
 
 function App() {
   return (
     <>
-    <div className='App'>
-      <Nav />
-      <Header />
-      <Main />
-      <Footer />  
-    </div>
+    <Layout>
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path="/About" element={<About />} />
+      </Routes>
+    </Layout>
     </>
   );
 }

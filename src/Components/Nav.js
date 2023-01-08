@@ -1,27 +1,16 @@
 import React from 'react'
 import logo from "../Assets/Logo.png"
-export const Nav = () => {
+import { Link } from "react-router-dom"
+import { About } from './About'
+export const Nav = (props) => {
   return (
     <nav className='nav'>
         <div className='logo'>
             <img src={logo} alt="Little Lemon logo" />
         </div>
          <ul className='navigation'>
-            <li>
-              <a href="/#">Home</a>  
-            </li>
-            <li>
-                <a href="/#">About</a>
-            </li>
-            <li>
-                <a href="/#">Reservations</a>
-            </li>
-            <li>
-                <a href="/#">Order-Online</a>
-            </li>
-            <li>
-                <a href="/#">Login</a>
-            </li>
+         <Link to="/">Home</Link>
+         <Link to="/About">About</Link>
          </ul>
     </nav>
   )
