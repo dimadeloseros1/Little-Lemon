@@ -1,0 +1,44 @@
+.form {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 35rem;
+    height: 45rem;
+    font-size: 1.2rem;
+    gap: 11px;
+    padding: 2rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+
+.fieldset > input, fieldset > select {
+    font-size: 23px;
+    border: 1px solid rgb(219, 209, 209);
+    border-radius: 5px;
+}
+
+.fieldset > input::placeholder , .fieldset > select::placeholder {
+    font-size: 1.4rem;
+    right: 10px;
+}
+
+.input--submit {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(240, 218, 92);
+}
+
+.input--submit:hover {
+    background-color: brown;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.error--field {
+    color: red;
+}

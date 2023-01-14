@@ -2,7 +2,7 @@ import React from 'react'
 import logo from "../Assets/Logo.png"
 export const Footer = () => {
   return (
-    <footer>
+    <footer className='footer'>
       <section className='footer--section'>
         <div>
           <img src={logo} alt="logo" />
