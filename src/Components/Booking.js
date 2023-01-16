@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
 import {useFormik} from "formik"
 import * as Yup from "yup"
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const Booking = () => {
     const [reservation, setReservation] = useState({})
-    const navigate = useNavigate()
 
-    const confirm = () => {
-        navigate("/Confirmation", {state: {reservation: values}})
-    }
+    const [availableTimes, setAvailableTimes] = useState([
+        "17:00",
+        "18:00",
+        "19:00",
+        "20:00",
+        "21:00",
+        "22:00",
+    ])
+
+
     const {values, handleBlur, handleChange, handleSubmit, touched, errors} = useFormik({
         initialValues: {
             date: "",
@@ -56,16 +62,13 @@ export const Booking = () => {
               />
             <br />
             <label htmlFor="res-time">Choose time</label>
-            <select name="time" id="res--time"  >
-                <option value="">17:00</option>
-                <option value="">18:00</option>
-                <option value="">19:00</option>
-                <option value="">20:00</option>
-                <option value="">21:00</option>
-                <option value="">22:00</option>
+            <select name="time" id="res--time" value={values.time} onChange={handleChange}>
+                {availableTimes.map((time, index) => (
+                    <option key={index} value={time}>{time}</option>
+                ))}
             </select>
             <label htmlFor="guests">Number of guests</label>
-            <input 
+            <input
                 type="number"
                 placeholder='1'
                 name='guests'
@@ -119,7 +122,9 @@ export const Booking = () => {
                 {touched.email && errors.email ? (
                     <div className='error--field'>{errors.email}</div>
                 ) : null}
-                <input className='input--submit' type="submit" value="Make your reservation" onClick={confirm}/>
+                <Link to ="/Confirmation" state={{reservation: values}}>
+                    <input className='input--submit' type="submit" value="Submit" data-testid="submit-button"/>
+                </Link>
         </fieldset>
     </form>
   )

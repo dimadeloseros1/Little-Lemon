@@ -31,6 +31,8 @@
     margin-top: 20px;
     padding: 10px;
     background-color: rgb(240, 218, 92);
+    width: 100%;
+    font-size: 1.5rem;
 }
 
 .input--submit:hover {
