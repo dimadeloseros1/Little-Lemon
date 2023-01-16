@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useFormik} from "formik"
 import * as Yup from "yup"
 import { Link } from 'react-router-dom'
@@ -6,14 +6,41 @@ import { Link } from 'react-router-dom'
 export const Booking = () => {
     const [reservation, setReservation] = useState({})
 
-    const [availableTimes, setAvailableTimes] = useState([
-        "17:00",
-        "18:00",
-        "19:00",
-        "20:00",
-        "21:00",
-        "22:00",
-    ])
+    const [availableTimes, setAvailableTimes] = useState([])
+
+    const seededRandom = function (seed) {
+        var m = 2**35 - 31;
+        var a = 185852;
+        var s = seed % m;
+        return function () {
+            return (s = s * a % m) / m;
+        };
+    }
+    const fetchAPI = function(date) {
+        let result = [];
+        let random = seededRandom(date.getDate());
+        for(let i = 17; i <= 23; i++) {
+            if(random() < 0.5) {
+                result.push(i + ':00');
+            }
+            if(random() < 0.5) {
+                result.push(i + ':30');
+            }
+        }
+        return result;
+    };
+    const submitAPI = function(formData) {
+        return true;
+    };
+
+    useEffect(() => {
+        const fetchData = async() => {
+            const date = new Date()
+            const times = await fetchAPI(date)
+            setAvailableTimes(times)
+        }
+        fetchData()
+    }, [])
 
 
     const {values, handleBlur, handleChange, handleSubmit, touched, errors} = useFormik({
@@ -38,17 +65,28 @@ export const Booking = () => {
             email: Yup.string().email("Invalid email adress").required("Required")
         }),
         onSubmit: async(values, actions) => {
-            alert(JSON.stringify(values, null, 2))
+            const isSubmitted = await submitAPI(values)
+            if(isSubmitted){
+                alert("Reservation submitted successfully")
+                actions.resetForm()
+            } else {
+                alert("An error ocurred, please try again later")
+            }
             await new Promise((resolve) => setTimeout(resolve, 1000))
             document.getElementById("res--date").value = ""
             document.getElementById("res--time").value = ""
             document.getElementById("guests").value = ""
             document.getElementById("ocassion").value = ""
             actions.resetForm()
-            console.log(values)
         }
     })
-
+    const isdisabled = () => {
+        if(values.date && values.time && values.guests && values.name && values.surname && values.email){
+            return false
+        } else {
+            return true
+        }
+    }
 
   return (
     <form className='form' onSubmit={handleSubmit} reservation={reservation}>
@@ -123,7 +161,7 @@ export const Booking = () => {
                     <div className='error--field'>{errors.email}</div>
                 ) : null}
                 <Link to ="/Confirmation" state={{reservation: values}}>
-                    <input className='input--submit' type="submit" value="Submit" data-testid="submit-button"/>
+                    <input className='input--submit' type="submit" value="Submit" data-testid="submit-button" disabled={isdisabled()}/>
                 </Link>
         </fieldset>
     </form>

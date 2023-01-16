@@ -33,12 +33,13 @@
     background-color: rgb(240, 218, 92);
     width: 100%;
     font-size: 1.5rem;
+    transition: 0.1s ease-out;
 }
 
 .input--submit:hover {
-    background-color: brown;
     cursor: pointer;
-    color: aliceblue;
+    transform: scale(1.01);
+    transition: 0.1s ease-in-out;
 }
 
 .error--field {

@@ -19,16 +19,18 @@ export const Footer = () => {
         </article>
         <article className="footer--article__contact">
           <h3>Contact Info</h3>
-          <p>Swindon</p>
-          <p>Plymouth Street n27</p>
+          <address>
+            <p>Swindon</p>
+            <p>Plymouth Street n27</p>
+          </address>
         </article>
         <article className="footer--article__socialMedia">
           <h3>Social Media</h3>
           <ul>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Instagram</li>
-            <li>Github</li>
+            <li><a href="https://en-gb.facebook.com/">Facebook</a></li>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li><a href="https://github.com/">Github</a></li>
           </ul>
         </article>
       </section>

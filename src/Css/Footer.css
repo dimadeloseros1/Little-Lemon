@@ -5,3 +5,10 @@
     flex-wrap: wrap;
 }
 
+.footer--article__socialMedia > ul > li {
+    margin-top: 5px;
+}
+
+.footer--article__navigation > ul > li {
+    margin-top: 1px
+}
