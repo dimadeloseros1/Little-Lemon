@@ -43,12 +43,12 @@ html {
 
 .icon--up--main:hover {
     transform: scale(1.2);
-    transition: transform 0.5s ;
+    transition: transform 0.2s ;
     cursor: pointer;
     
 }
 .icon--up--main {
-    transition: 0.5s ease-in;
+    transition: 0.2s ease-in;
 }
 
 .online--menu__button:hover {
