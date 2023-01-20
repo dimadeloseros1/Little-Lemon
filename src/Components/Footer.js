@@ -3,11 +3,11 @@ import logo from "../Assets/Logo.png"
 export const Footer = () => {
   return (
     <footer className='footer'>
-      <section className='footer--section'>
+      <section className='footer__section'>
         <div>
           <img src={logo} alt="logo" />
         </div>
-        <article className='footer--article__navigation'>
+        <article className='footer__article--navigation'>
           <h3>Doormat Navigation</h3>
           <ul>
             <li>About</li>
@@ -24,7 +24,7 @@ export const Footer = () => {
             <p>Plymouth Street n27</p>
           </address>
         </article>
-        <article className="footer--article__socialMedia">
+        <article className="footer__article--socialMedia">
           <h3>Social Media</h3>
           <ul>
             <li><a href="https://en-gb.facebook.com/">Facebook</a></li>

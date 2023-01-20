@@ -11,28 +11,29 @@ export const Nav = (props) => {
     setIsOpen(!isOpen)
   }
 
+  
   return (
     <nav className='nav'>
         <div className='logo'>
           <Link to="/">
-            <img style={{cursor: "pointer"}} src={logo} alt="Little Lemon logo" />
+            <img style={{cursor: "pointer"}} src={logo} alt="Little Lemon logo"/>
           </Link>
         </div>
         <button className="hamburger" id="hamburger" onClick={toggleFunc}>
           <GiHamburgerMenu />
         </button>
-         <ul className={`navigation__menu ${isOpen ? "open" : "closed"}`} >
+         <ul className={`navigation__menu ${isOpen ? "open" : "closed"}`}>
             <li className='nav__item'>
-              <Link to="/" onClick={toggleFunc}>Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className='nav__item'>
-              <Link to="/About" onClick={toggleFunc}>About</Link>
+              <Link to="/About">About</Link>
             </li>
             <li className='nav__item'>
-              <Link to="/Menu" onClick={toggleFunc}>Menu</Link>
+              <Link to="/Menu">Menu</Link>
             </li>
             <li className='nav__item'>
-              <Link to="/Booking" onClick={toggleFunc}>Booking</Link>
+              <Link to="/Booking">Booking</Link>
             </li>
          </ul>
     </nav>

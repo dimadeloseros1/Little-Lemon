@@ -38,10 +38,6 @@
     height: 30px;
   }
 
-  .hamburger svg path {
-  transition: all 0.2s ease-in-out;
-}
-
   .hamburger:focus {
     outline: none;
   }
@@ -60,9 +56,6 @@
       backdrop-filter: sepia(90%);
     }
 
-    .navigation__menu.closed {
-      animation: slideOut 0.2s ease-in-out;
-    }
 
     @keyframes slideIn {
       from {
@@ -98,4 +91,5 @@
     .open {
       display: flex;
     }
+
   }
