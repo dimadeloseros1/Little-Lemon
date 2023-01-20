@@ -24,7 +24,7 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
     height: 80px;
 }
 
@@ -32,7 +32,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .testimonials--section {
@@ -62,7 +62,7 @@
 
 .dropdown--icon:hover {
     transform: scale(1.2);
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 
 .testimonials--header {

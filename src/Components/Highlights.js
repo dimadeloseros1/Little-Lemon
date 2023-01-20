@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import brucheta from "../Assets/Bruschetta-Chicken.jpg"
 import salad from "../Assets/greek salad.jpg"
 import lemon from "../Assets/lemon dessert.jpg"
@@ -7,10 +7,22 @@ import {BiArrowFromBottom} from "react-icons/bi"
 import { Link } from 'react-router-dom'
 
 export const Highlights = () => {
-
+  
+  const [showButton, setShowButton] = useState(false)
   const gotoTop = () => {
     window.scroll(0, document.body.scrollTop)
   }
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if(window.pageYOffset > 300){
+        setShowButton(true)
+      } else {
+        setShowButton(false)
+      }
+    })
+  }, []);
+
   return (
     <main>
       <section className='first--section'>
@@ -57,7 +69,7 @@ export const Highlights = () => {
           </div>
         </article>
       </section>
-      <div className='up--icon'>
+      <div className={`up--icon ${showButton ? "show" : "hide"}`}>
         <BiArrowFromBottom className='icon--up--main' onClick={gotoTop}/>
       </div>
     </main>

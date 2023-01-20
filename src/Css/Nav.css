@@ -1,4 +1,4 @@
-.navigation {
+.navigation__menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,11 +8,11 @@
 
 
 
-  .navigation a {
+  .navigation__menu a {
     color: black;
     font-weight: 600;
   }
-  .navigation a:hover{
+  .navigation__menu a:hover{
     color: red;
   }
   .nav {
@@ -23,9 +23,79 @@
     margin-right: 6rem;
   }
 
+  .hamburger {
+    font-size: 1.7rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 0;
+    display: none;
+    cursor: pointer;
+    position: relative;
+  }
+  .hamburger svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hamburger svg path {
+  transition: all 0.2s ease-in-out;
+}
+
+  .hamburger:focus {
+    outline: none;
+  }
+
   @media(max-width:750px){
-    .navigation {
-        display: flex;
-        flex-wrap: wrap;
+    .navigation__menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 70px;
+      background-color: rgba(240, 220, 220, 0.616);
+      text-align: center;
+      z-index: 1;
+      backdrop-filter: sepia(90%);
+    }
+
+    .navigation__menu.closed {
+      animation: slideOut 0.2s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideOut {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .navigation__menu.open {
+      animation: slideIn 0.2s ease-in-out
+    }
+
+    .navigation__menu.closed {
+      animation: slideOut 0.2s ease-in-out;
+    }
+    
+    .hamburger {
+      display: block;
+      left: 40px;
+    }
+
+    .open {
+      display: flex;
     }
   }
