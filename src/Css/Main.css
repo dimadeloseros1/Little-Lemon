@@ -36,10 +36,6 @@ html {
     display: block;
     font-size: 1.7rem;
   }
-  
-  .up--icon.hide {
-    display: none;
-  }
 
 .icon--up--main:hover {
     transform: scale(1.2);

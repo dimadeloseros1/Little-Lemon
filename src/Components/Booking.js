@@ -54,7 +54,6 @@ export const Booking = () => {
             email: ""
         },
         validationSchema: Yup.object({
-            
             name: Yup.string()
                 .max(12, "Must be 12 charachters or less")
                 .min(4, "Must be at least 4 charachters")
@@ -82,7 +81,7 @@ export const Booking = () => {
         }
     })
     const isdisabled = () => {
-        if(values.date && values.time && values.guests && values.name && values.surname && values.email){
+        if(values.date  && values.time && values.guests && values.name && values.surname && values.email){
             return false
         } else {
             return true
@@ -102,9 +101,9 @@ export const Booking = () => {
             <br />
             <label htmlFor="res-time">Choose time</label>
             <select name="time" id="res--time" value={values.time} onChange={handleChange}>
-                {availableTimes.map((time, index) => (  
-                    <option key={index} value={time}>{time}</option>
-))}
+                {availableTimes.map((time, index) => (
+                  <option key={index} value={time}>{time}</option>
+                ))}
             </select>
             <label htmlFor="guests">Number of guests</label>
             <input

@@ -27,10 +27,10 @@ export const Footer = () => {
         <article className="footer__article--socialMedia">
           <h3>Social Media</h3>
           <ul>
-            <li><a href="https://en-gb.facebook.com/">Facebook</a></li>
-            <li><a href="https://twitter.com/">Twitter</a></li>
-            <li><a href="https://www.instagram.com/">Instagram</a></li>
-            <li><a href="https://github.com/">Github</a></li>
+            <li><a href="https://en-gb.facebook.com/" target="_blank" rel="noreferrer">Facebook</a></li>
+            <li><a href="https://twitter.com/" target="_blank" rel="noreferrer">Twitter</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://github.com/" target="_blank" rel="noreferrer">Github</a></li>
           </ul>
         </article>
       </section>

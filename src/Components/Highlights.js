@@ -7,7 +7,7 @@ import {BiArrowFromBottom} from "react-icons/bi"
 import { Link } from 'react-router-dom'
 
 export const Highlights = () => {
-  
+
   const [showButton, setShowButton] = useState(false)
   const gotoTop = () => {
     window.scroll(0, document.body.scrollTop)
